@@ -64,9 +64,9 @@ So we define a new set of command and acknowledge messages within CMD VAL called
     <td> --- ( *reserved* ) </td>
   </tr>
 
-  <!-----SET 0x01----->
+ <!-------SET 0x01-------->
   <tr>
-    <td rowspan=4> 0x01
+    <td rowspan=7> 0x01
       <br> <br> Visual Landing </td>
     <td> 0x01 </td>
     <td> --- </td>
@@ -82,10 +82,31 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   </tr>
   <tr>
     <!--SET 0x01-->
+    <td> 0x03 </td>
+    <td> --- </td>
+    <td> M-O </td>
+    <td> Stop - CMD </td>
+  </tr>
+  <tr>
+    <!--SET 0x01-->
+    <td> 0x04 </td>
+    <td> --- </td>
+    <td> O-M </td>
+    <td> Stop - ACK </td>
+  </tr>
+  <tr>
+    <!--SET 0x01-->
     <td> 0x06 </td>
     <td> --- </td>
     <td> O-M </td>
     <td> Landing successfully </td>
+  </tr>
+  <tr>
+    <!--SET 0x01-->
+    <td> 0x42 </td>
+    <td> 0xXXXX ... </td>
+    <td> O-M </td>
+    <td> Delta X and Y distance <br>( *continuously send* )</td>
   </tr>
   <tr>
     <!--SET 0x01-->
@@ -95,7 +116,7 @@ So we define a new set of command and acknowledge messages within CMD VAL called
     <td> Circle center and radius <br>( *continuously send* )</td>
   </tr>
 
-  <!-----SET 0x02----->
+  <!-------SET 0x02------->
   <tr>
     <td rowspan=6> 0x02
       <br> <br> Object Tracking </td>
@@ -130,7 +151,7 @@ So we define a new set of command and acknowledge messages within CMD VAL called
     <td> 0x11 </td>
     <td> 0xXXXX </td>
     <td> M-O </td>
-    <td> Object position <br> ( *upper-left and lower-right point* ) </td>
+    <td> Object position percentage <br> ( *upper-left and lower-right point* ) </td>
   </tr>
   <tr>
     <!--SET 0x02-->
