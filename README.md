@@ -175,7 +175,8 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   <tr>
     <td> dji-sdk/... </td>
     <td> ( *many* ) </td>
-    <td> ( *many* ) </td>
+    <td> ( *many* )
+      <br> /dji_sdk/local_position </td>
     <td> Official SDK </td>
     <td> DJI </td>
   </tr>
@@ -202,6 +203,7 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   <tr>
     <td> landing_alg_node </td>
     <td> /dji_sdk/image_raw
+      <br> /dji_sdk/local_position
       <br> cruiser/landing_flag </td>
     <td> cruiser/landing_move </td>
     <td> Hough circle detection </td>
@@ -210,7 +212,8 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   </tr>
   <tr>
     <td> landing_move_node </td>
-    <td> cruiser/landing_move </td>
+    <td> /dji_sdk/local_position
+      <br> cruiser/landing_move </td>
     <td> --- </td>
     <td> Movement control </td>
     <td> @Cuijie12358 </td>
@@ -220,6 +223,7 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   <tr>
     <td> tracking_alg_node </td>
     <td> /dji_sdk/image_raw
+      <br> /dji_sdk/local_position
       <br> cruiser/tracking_flag
       <br> cruiser/tracking_position </td>
     <td> cruiser/tracking_move </td>
@@ -255,14 +259,15 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   <tr>
     <td> cruiser/landing_flag </td>
     <td> bool flag </td>
-    <td> flag.msg </td>
+    <td> Flag.msg </td>
     <td> Start or stop landing flag </td>
   </tr>
   <tr>
     <td> cruiser/landing_move </td>
-    <td> float32 delta_X_meter
+    <td> bool state
+      <br> float32 delta_X_meter
       <br> float32 delta_Y_meter </td>
-    <td> move.msg </td>
+    <td> DeltaPosition.msg </td>
     <td> Delta X and Y distance in ground coordinate system </td>
   </tr>
 
@@ -270,21 +275,24 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   <tr>
     <td> cruiser/tracking_flag </td>
     <td> bool flag </td>
-    <td> flag.msg </td>
+    <td> Flag.msg </td>
     <td> Start or stop tracking flag </td>
   </tr>
   <tr>
     <td> cruiser/tracking_position </td>
-    <td> float32 width_percent
-      <br> float32 height_percent </td>
-    <td> position.msg </td>
+    <td> float32 A_width_percent
+      <br> float32 A_height_percent
+      <br> float32 B_width_percent
+      <br> float32 B_height_percent </td>
+    <td> TrackingPosition.msg </td>
     <td> Point position in percentage </td>
   </tr>
   <tr>
     <td> cruiser/tracking_move </td>
-    <td> float32 delta_X_meter
+    <td> bool state
+      <br> float32 delta_X_meter
       <br> float32 delta_Y_meter </td>
-    <td> move.msg </td>
+    <td> DeltaPosition.msg </td>
     <td> Delta X and Y distance in ground coordinate system </td>
   </tr>
 </table>
