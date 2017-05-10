@@ -268,7 +268,8 @@ So we define a new set of command and acknowledge messages within CMD VAL called
       <br> float32 delta_X_meter
       <br> float32 delta_Y_meter </td>
     <td> DeltaPosition.msg </td>
-    <td> Delta X and Y distance in ground coordinate system </td>
+    <td> Delta X and Y distance 
+      <br> in ground coordinate system </td>
   </tr>
 
   <!-- Tracking Mission -->
@@ -280,10 +281,10 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   </tr>
   <tr>
     <td> cruiser/tracking_position </td>
-    <td> float32 A_width_percent
-      <br> float32 A_height_percent
-      <br> float32 B_width_percent
-      <br> float32 B_height_percent </td>
+    <td> float32 a_width_percent
+      <br> float32 a_height_percent
+      <br> float32 b_width_percent
+      <br> float32 b_height_percent </td>
     <td> TrackingPosition.msg </td>
     <td> Point position in percentage </td>
   </tr>
@@ -293,6 +294,7 @@ So we define a new set of command and acknowledge messages within CMD VAL called
       <br> float32 delta_X_meter
       <br> float32 delta_Y_meter </td>
     <td> DeltaPosition.msg </td>
-    <td> Delta X and Y distance in ground coordinate system </td>
+    <td> Delta X and Y distance 
+      <br> in ground coordinate system </td>
   </tr>
 </table>
