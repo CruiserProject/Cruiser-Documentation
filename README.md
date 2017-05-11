@@ -52,7 +52,8 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   <tr>
     <th>CDT SET</th>
     <th>CDT ID</th>
-    <th>CDT VAL</th>
+    <th>CDT VAL
+      <br> Size (byte)</th>
     <th>Direction</th>
     <th>Description</th>
   </tr>
@@ -61,12 +62,12 @@ So we define a new set of command and acknowledge messages within CMD VAL called
     <td> --- </td>
     <td> --- </td>
     <td> --- </td>
-    <td> --- ( *reserved* ) </td>
+    <td> --- ( <I>reserved</I> ) </td>
   </tr>
 
  <!-------SET 0x01-------->
   <tr>
-    <td rowspan=7> 0x01
+    <td rowspan=8> 0x01
       <br> <br> Visual Landing </td>
     <td> 0x01 </td>
     <td> --- </td>
@@ -85,7 +86,7 @@ So we define a new set of command and acknowledge messages within CMD VAL called
     <td> 0x03 </td>
     <td> --- </td>
     <td> M-O </td>
-    <td> Stop - CMD </td>
+    <td> Stop visual detection - CMD </td>
   </tr>
   <tr>
     <!--SET 0x01-->
@@ -99,26 +100,34 @@ So we define a new set of command and acknowledge messages within CMD VAL called
     <td> 0x06 </td>
     <td> --- </td>
     <td> O-M </td>
-    <td> Landing successfully </td>
+    <td> Land vertically </td>
+  </tr>
+  <tr>
+    <!--SET 0x01-->
+    <td> 0x08 </td>
+    <td> --- </td>
+    <td> O-M </td>
+    <td> Land successfully </td>
   </tr>
   <tr>
     <!--SET 0x01-->
     <td> 0x42 </td>
-    <td> 0xXXXX ... </td>
+    <td> 2 + 2 </td>
     <td> O-M </td>
-    <td> Delta X and Y distance <br>( *continuously send* )</td>
+    <td> Delta X and Y position (meter)
+      <br>( <I>2 bytes char instead of 1 float</I> )</td>
   </tr>
   <tr>
     <!--SET 0x01-->
     <td> 0x44 </td>
-    <td> 0xXXXX ... </td>
+    <td> 2 + 1 </td>
     <td> O-M </td>
-    <td> Circle center and radius <br>( *continuously send* )</td>
+    <td> Circle center and radius <br>( <I>1 point and 1 length</I> )</td>
   </tr>
 
   <!-------SET 0x02------->
   <tr>
-    <td rowspan=6> 0x02
+    <td rowspan=8> 0x02
       <br> <br> Object Tracking </td>
     <td> 0x01 </td>
     <td> --- </td>
@@ -149,16 +158,33 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   <tr>
     <!--SET 0x02-->
     <td> 0x11 </td>
-    <td> 0xXXXX </td>
+    <td> 2 + 2 </td>
     <td> M-O </td>
-    <td> Object position percentage <br> ( *upper-left and lower-right point* ) </td>
+    <td> Object position to be tracking
+      <br> ( <I>2 diagonal points of a rectangle</I> ) </td>
+  </tr>
+  <tr>
+    <!--SET 0x02-->
+    <td> 0x12 </td>
+    <td> --- </td>
+    <td> O-M </td>
+    <td> Position - ACK </td>
+  </tr>
+  <tr>
+    <!--SET 0x02-->
+    <td> 0x42 </td>
+    <td> 2 + 2 </td>
+    <td> O-M </td>
+    <td> Delta X and Y position (meter)
+      <br>( <I>2 bytes char instead of 1 float</I> )</td>
   </tr>
   <tr>
     <!--SET 0x02-->
     <td> 0x44 </td>
-    <td> 0xXXXX ... </td>
+    <td> 2 + 2 </td>
     <td> O-M </td>
-    <td> Current position of object <br>( *continuously send* )</td>
+    <td> Current position of object
+      <br> ( <I>2 diagonal points of a rectangle</I> )</td>
   </tr>
 </table>
 
@@ -181,22 +207,25 @@ So we define a new set of command and acknowledge messages within CMD VAL called
     <td> DJI </td>
   </tr>
   <tr>
-    <td> image_raw </td>
+    <td> dji_sdk_read_cam </td>
     <td> --- </td>
     <td> /dji_sdk/image_raw
       <br> /dji_sdk/camera_info </td>
-    <td> Get cam image and pub </td>
-    <td> DJI
-      <br> @ShoupingShan </td>
+    <td> Get camera image and publish </td>
+    <td> DJI </td>
   </tr>
   <tr>
     <td> mobile_msg </td>
-    <td> /dji_sdk/data_received_from_remote_device </td>
+    <td> /dji_sdk/data_received_from_remote_device
+      <br> cruiser/landing_move
+      <br> cruiser/tracking_move
+      <br> cruiser/tracking_position_now </td>
     <td> cruiser/landing_flag
       <br> cruiser/tracking_flag
       <br> cruiser/tracking_position </td>
     <td> Read message from Mobile and pub </td>
-    <td> @Cuijie12358 </td>
+    <td> @Cuijie12358
+      <br> @hanzheteng </td>
   </tr>
 
   <!-- Landing Mission -->
@@ -208,7 +237,7 @@ So we define a new set of command and acknowledge messages within CMD VAL called
     <td> cruiser/landing_move </td>
     <td> Hough circle detection </td>
     <td> @ShoupingShan
-      <br> @hanzheteng </td>
+      <br> @XiangqianMa </td>
   </tr>
   <tr>
     <td> landing_move_node </td>
@@ -226,10 +255,11 @@ So we define a new set of command and acknowledge messages within CMD VAL called
       <br> /dji_sdk/local_position
       <br> cruiser/tracking_flag
       <br> cruiser/tracking_position </td>
-    <td> cruiser/tracking_move </td>
+    <td> cruiser/tracking_move
+      <br> cruiser/tracking_position_now </td>
     <td> Object tracking algorithm </td>
     <td> @ShoupingShan
-      <br> @hanzheteng </td>
+      <br> @XiangqianMa </td>
   </tr>
   <tr>
     <td> tracking_move_node </td>
@@ -268,7 +298,7 @@ So we define a new set of command and acknowledge messages within CMD VAL called
       <br> float32 delta_X_meter
       <br> float32 delta_Y_meter </td>
     <td> DeltaPosition.msg </td>
-    <td> Delta X and Y distance 
+    <td> Delta X and Y distance
       <br> in ground coordinate system </td>
   </tr>
 
@@ -280,21 +310,30 @@ So we define a new set of command and acknowledge messages within CMD VAL called
     <td> Start or stop tracking flag </td>
   </tr>
   <tr>
+    <td> cruiser/tracking_move </td>
+    <td> bool state
+      <br> float32 delta_X_meter
+      <br> float32 delta_Y_meter </td>
+    <td> DeltaPosition.msg </td>
+    <td> Delta X and Y distance
+      <br> in ground coordinate system </td>
+  </tr>
+  <tr>
     <td> cruiser/tracking_position </td>
     <td> float32 a_width_percent
       <br> float32 a_height_percent
       <br> float32 b_width_percent
       <br> float32 b_height_percent </td>
     <td> TrackingPosition.msg </td>
-    <td> Point position in percentage </td>
+    <td> Two points on screen in percentage </td>
   </tr>
   <tr>
-    <td> cruiser/tracking_move </td>
-    <td> bool state
-      <br> float32 delta_X_meter
-      <br> float32 delta_Y_meter </td>
-    <td> DeltaPosition.msg </td>
-    <td> Delta X and Y distance 
-      <br> in ground coordinate system </td>
+    <td> cruiser/tracking_position_now </td>
+    <td> float32 a_width_percent
+      <br> float32 a_height_percent
+      <br> float32 b_width_percent
+      <br> float32 b_height_percent </td>
+    <td> TrackingPosition.msg </td>
+    <td> Two points on screen in percentage </td>
   </tr>
 </table>
