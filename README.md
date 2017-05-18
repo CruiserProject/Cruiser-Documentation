@@ -14,38 +14,45 @@ Documentation maintainer: [@hanzheteng](https://github.com/hanzheteng)
   <tr>
     <td> OnboardROS
       <br> ( <I> private </I> ) </td>
-    <td> - Movement control
-      <br> - Object detection and tracking
-      <br> - Autonomous landing by Hough circle detection
-      <br> - Executing command from mobile terminal </td>
-    <td> - [DJI Matrice100](http://www.dji.com/matrice100)
-      <br> - [Manifold](http://www.dji.com/manifold) (Ubuntu 14.04)
-      <br> - [Robot Operating System](http://wiki.ros.org/) (indigo)
-      <br> - [DJI Onboard-SDK-ROS](https://github.com/dji-sdk/Onboard-SDK-ROS) </td>
-    <td> [@Cuijie12358](https://github.com/Cuijie12358)
-      <br> [@hanzheteng](https://github.com/hanzheteng)
-      <br> [@XiangqianMa](https://github.com/XiangqianMa)
-      <br> [@ShoupingShan](https://github.com/ShoupingShan) </td>
+    <td> <ul>
+      <li> Movement control </li>
+      <li> Object detection and tracking </li>
+      <li> Autonomous landing by Hough circle detection </li>
+      <li> Executing command from mobile terminal </li> </ul> </td>
+    <td> <ul>
+      <li> <a href="http://www.dji.com/matrice100"> DJI Matrice100 </a> </li>
+      <li> <a href="http://www.dji.com/manifold"> Manifold </a> (Ubuntu 14.04) </li>
+      <li> <a href="http://wiki.ros.org/"> Robot Operating System </a> (indigo) </li>
+      <li> <a href="https://github.com/dji-sdk/Onboard-SDK-ROS"> Onboard-SDK-ROS </a> </li> </ul> </td>
+    <td> <a href="https://github.com/Cuijie12358"> @Cuijie12358 </a>
+      <br> <a href="https://github.com/hanzheteng"> @hanzheteng </a>
+      <br> <a href="https://github.com/XiangqianMa"> @XiangqianMa </a>
+      <br> <a href="https://github.com/ShoupingShan"> @ShoupingShan </a> </td>
   </tr>
   <tr>
     <td> GroundStation
       <br> ( <I> private </I> ) </td>
-    <td> - Object detection and classification
-      <br> - Anomalous behavior detection </td>  
-    <td> - [Ubuntu 14.04](http://www.ubuntu.com/)
-      <br> - [OpenCV 2.4.10](http://opencv.org/)
-      <br> - [CUDA 8.0](http://www.nvidia.cn/object/cudazone-cn.html)
-      <br> - [Darknet YOLO CNN](https://pjreddie.com/darknet) </td>
-    <td> [@finaldong](https://github.com/finaldong)
-      <br> [@ShoupingShan](https://github.com/ShoupingShan) </td>
+    <td> <ul>
+      <li> Object detection and classification </li>
+      <li> Anomalous behavior detection </li> </ul> </td>  
+    <td> <ul>
+      <li> <a href="http://www.ubuntu.com/"> Ubuntu 14.04 </a> </li>
+      <li> <a href="http://opencv.org/"> OpenCV 2.4.10 </a> </li>
+      <li> <a href="http://www.nvidia.cn/object/cudazone-cn.html"> CUDA 8.0 </a> </li>
+      <li> <a href="https://pjreddie.com/darknet"> Darknet YOLO CNN </a> </li> </ul> </td>
+    <td> <a href="https://github.com/finaldong"> @finaldong </a>
+      <br> <a href="https://github.com/ShoupingShan"> @ShoupingShan </a> </td>
   </tr>
   <tr>
-    <td> [MobileController](https://github.com/CruiserProject/Cruiser-MobileController) </td>
-    <td> - Autonomous cruising mission
-      <br> - Object detection and tracking </td>
-    <td> - Android 5.1 or above </td>
-    <td> [@TrafalgarZZZ](https://github.com/TrafalgarZZZ)
-      <br> [@hwding](https://github.com/hwding) </td>
+    <td> <a href="https://github.com/CruiserProject/Cruiser-MobileController">
+      MobileController </a> </td>
+    <td> <ul>
+      <li> Autonomous cruising mission </li>
+      <li> Object detection and tracking </li> </ul> </td>
+    <td> <ul>
+      <li> Android 5.1 or above </li> </ul> </td>
+    <td> <a href="https://github.com/TrafalgarZZZ"> @TrafalgarZZZ </a>
+      <br> <a href="https://github.com/hwding"> @hwding </a> </td>
   </tr>
 </table>
 
