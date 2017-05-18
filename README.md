@@ -1,22 +1,71 @@
 # Cruiser-Documentation
 Documentation for Cruiser Project.
 
-maintainer: [@hanzheteng](https://github.com/hanzheteng)
-## CDT Protocol
+Documentation maintainer: [@hanzheteng](https://github.com/hanzheteng)
+
+## 1. "Cruiser" Project Introduction
+<table>
+  <tr>
+    <th> Repositories </th>
+    <th> Description ( <I> Functions </I> ) </th>
+    <th> Platform </th>
+    <th> Collaborators </th>
+  </tr>
+  <tr>
+    <td> OnboardROS
+      <br> ( <I> private </I> ) </td>
+    <td> - Movement control
+      <br> - Object detection and tracking
+      <br> - Autonomous landing by Hough circle detection
+      <br> - Executing command from mobile terminal </td>
+    <td> - [DJI Matrice100](http://www.dji.com/matrice100)
+      <br> - [Manifold](http://www.dji.com/manifold) (Ubuntu 14.04)
+      <br> - [Robot Operating System](http://wiki.ros.org/) (indigo)
+      <br> - [DJI Onboard-SDK-ROS](https://github.com/dji-sdk/Onboard-SDK-ROS) </td>
+    <td> [@Cuijie12358](https://github.com/Cuijie12358)
+      <br> [@hanzheteng](https://github.com/hanzheteng)
+      <br> [@XiangqianMa](https://github.com/XiangqianMa)
+      <br> [@ShoupingShan](https://github.com/ShoupingShan) </td>
+  </tr>
+  <tr>
+    <td> GroundStation
+      <br> ( <I> private </I> ) </td>
+    <td> - Object detection and classification
+      <br> - Anomalous behavior detection </td>  
+    <td> - [Ubuntu 14.04](http://www.ubuntu.com/)
+      <br> - [OpenCV 2.4.10](http://opencv.org/)
+      <br> - [CUDA 8.0](http://www.nvidia.cn/object/cudazone-cn.html)
+      <br> - [Darknet YOLO CNN](https://pjreddie.com/darknet) </td>
+    <td> [@finaldong](https://github.com/finaldong)
+      <br> [@ShoupingShan](https://github.com/ShoupingShan) </td>
+  </tr>
+  <tr>
+    <td> [MobileController](https://github.com/CruiserProject/Cruiser-MobileController) </td>
+    <td> - Autonomous cruising mission
+      <br> - Object detection and tracking </td>
+    <td> - Android 5.1 or above </td>
+    <td> [@TrafalgarZZZ](https://github.com/TrafalgarZZZ)
+      <br> [@hwding](https://github.com/hwding) </td>
+  </tr>
+</table>
+
+
+## 2. CDT Protocol
 Cruiser Data Transmission(CDT) Protocol.
-### Introduction
+### 2.1 Protocol Introduction
 DJI Onboard SDK OPEN Protocol provide a method for communication between Mobile and Onboard device called Data Transparent Transmission.
 
 Under this mechanism, we could send message to Autopilot first and Autopilot will transfer this message to Mobile or Onboard device.
 
 <table align="center">
   <tr>
-    <th colspan=3>CMD Frame</th>
+    <th colspan=3> CMD Frame </th>
   </tr>
   <tr>
-    <td>CMD SET</td>
-    <td>CMD ID</td>
-    <td>CMD VAL<br>( CDT DATA )</td>
+    <td> CMD SET </td>
+    <td> CMD ID </td>
+    <td> CMD VAL
+      <br> ( CDT DATA ) </td>
   </tr>
 </table>
 
@@ -24,25 +73,42 @@ DJI Onboard SDK OPEN Protocol is only used between Onboard and Autopilot. With C
 
 So we define a new set of command and acknowledge messages within CMD VAL called Cruiser Data Transmission (CDT).
 
-### CDT Frame
+### 2.2 CDT Frame
 <table>
   <tr>
-    <th colspan=3>CDT DATA</th>
+    <th colspan=3> CDT DATA </th>
   </tr>
   <tr>
-    <td>CDT SET</td>
-    <td>CDT ID</td>
-    <td>CDT VAL</td>
+    <td> CDT SET </td>
+    <td> CDT ID </td>
+    <td> CDT VAL </td>
   </tr>
 </table>
 
-| Field   | Offset(byte) | Size(byte)   |
-| ------  | ------------ | ------------ |
-| CDT SET | 0            | 1            |
-| CDT ID  | 1            | 1            |
-| CDT VAL | 2            | vary by CDTs |
+<table>
+  <tr>
+    <th> Field </th>
+    <th> Offset(byte) </th>
+    <th> Size(byte) </th>
+  </tr>
+  <tr>
+    <td> CDT SET </td>
+    <td> 0 </td>
+    <td> 1 </td>
+  </tr>
+  <tr>
+    <td> CDT ID </td>
+    <td> 1 </td>
+    <td> 1 </td>
+  </tr>
+  <tr>
+    <td> CDT VAL </td>
+    <td> 2 </td>
+    <td> vary by CDTs </td>
+  </tr>
+</table>
 
-### Function List
+### 2.3 Function List
 - Data type : unsigned char[ ]
 - M-O : from Mobile to Onboard -- CDT ID is an odd number
 - O-M : from Onboard to Mobile -- CDT ID is an even number
@@ -50,19 +116,19 @@ So we define a new set of command and acknowledge messages within CMD VAL called
 - ACK : acknowledge
 <table>
   <tr>
-    <th>CDT SET</th>
-    <th>CDT ID</th>
-    <th>CDT VAL
-      <br> Size (byte)</th>
-    <th>Direction</th>
-    <th>Description</th>
+    <th> CDT SET </th>
+    <th> CDT ID </th>
+    <th> CDT VAL
+      <br> Size(byte) </th>
+    <th> Direction </th>
+    <th> Description </th>
   </tr>
   <tr>
-    <td> 0x00 </td>
+    <td> 0x00 </td>
     <td> --- </td>
     <td> --- </td>
     <td> --- </td>
-    <td> --- ( <I>reserved</I> ) </td>
+    <td> --- ( <I> reserved </I> ) </td>
   </tr>
 
  <!-------SET 0x01-------->
@@ -115,14 +181,15 @@ So we define a new set of command and acknowledge messages within CMD VAL called
     <td> 2 + 2 </td>
     <td> O-M </td>
     <td> Delta X and Y position (meter)
-      <br>( <I>2 bytes char instead of 1 float</I> )</td>
+      <br> ( <I> 2 bytes char instead of 1 float </I> ) </td>
   </tr>
   <tr>
     <!--SET 0x01-->
     <td> 0x44 </td>
     <td> 2 + 1 </td>
     <td> O-M </td>
-    <td> Circle center and radius <br>( <I>1 point and 1 length</I> )</td>
+    <td> Circle center and radius
+      <br> ( <I> 1 point and 1 length </I> ) </td>
   </tr>
 
   <!-------SET 0x02------->
@@ -161,7 +228,7 @@ So we define a new set of command and acknowledge messages within CMD VAL called
     <td> 2 + 2 </td>
     <td> M-O </td>
     <td> Object position to be tracking
-      <br> ( <I>2 diagonal points of a rectangle</I> ) </td>
+      <br> ( <I> 2 diagonal points of a rectangle </I> ) </td>
   </tr>
   <tr>
     <!--SET 0x02-->
@@ -176,7 +243,7 @@ So we define a new set of command and acknowledge messages within CMD VAL called
     <td> 2 + 2 </td>
     <td> O-M </td>
     <td> Delta X and Y position (meter)
-      <br>( <I>2 bytes char instead of 1 float</I> )</td>
+      <br> ( <I> 2 bytes char instead of 1 float </I> ) </td>
   </tr>
   <tr>
     <!--SET 0x02-->
@@ -184,12 +251,13 @@ So we define a new set of command and acknowledge messages within CMD VAL called
     <td> 2 + 2 </td>
     <td> O-M </td>
     <td> Current position of object
-      <br> ( <I>2 diagonal points of a rectangle</I> )</td>
+      <br> ( <I> 2 diagonal points of a rectangle </I> ) </td>
   </tr>
 </table>
 
 
-## ROS Node Info
+## 3. Robot Operating System
+### 3.1 ROS Node Info
 <table>
   <tr>
     <th> Node name </th>
@@ -200,8 +268,8 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   </tr>
   <tr>
     <td> dji-sdk/... </td>
-    <td> ( *many* ) </td>
-    <td> ( *many* )
+    <td> ( <I> many </I> ) </td>
+    <td> ( <I> many </I> )
       <br> /dji_sdk/local_position </td>
     <td> Official SDK </td>
     <td> DJI </td>
@@ -272,7 +340,7 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   </tr>
 </table>
 
-## ROS Topic Format
+### 3.2 ROS Topic Format
 <table>
   <tr>
     <th> Topic name </th>
@@ -282,8 +350,8 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   </tr>
   <tr>
     <td> dji-sdk/ ... </td>
-    <td> ( *many* ) </td>
-    <td> ( *many* ) </td>
+    <td> ( <I> many </I> ) </td>
+    <td> ( <I> many </I> ) </td>
     <td> Official SDK </td>
   </tr>
 
