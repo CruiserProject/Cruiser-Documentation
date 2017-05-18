@@ -263,7 +263,9 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   </tr>
   <tr>
     <td> tracking_move_node </td>
-    <td> cruiser/tracking_move </td>
+    <td> /dji_sdk/local_position
+      <br> cruiser/tracking_flag
+      <br> cruiser/tracking_move </td>
     <td> --- </td>
     <td> Movement control </td>
     <td> @Cuijie12358 </td>
