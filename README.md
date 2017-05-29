@@ -12,8 +12,8 @@ Documentation maintainer: [@hanzheteng](https://github.com/hanzheteng)
     <th> Collaborators </th>
   </tr>
   <tr>
-    <td> OnboardROS
-      <br> ( <I> private </I> ) </td>
+    <td> <a href="https://github.com/CruiserProject/Cruiser-OnboardROS">
+      OnboardROS </a> </td>
     <td> <ul>
       <li> Movement control </li>
       <li> Object detection and tracking </li>
@@ -21,8 +21,8 @@ Documentation maintainer: [@hanzheteng](https://github.com/hanzheteng)
       <li> Executing command from mobile terminal </li> </ul> </td>
     <td> <ul>
       <li> <a href="http://www.dji.com/matrice100"> DJI Matrice100 </a> </li>
-      <li> <a href="http://www.dji.com/manifold"> Manifold </a> (Ubuntu 14.04) </li>
-      <li> <a href="http://wiki.ros.org/"> Robot Operating System </a> (indigo) </li>
+      <li> <a href="http://www.dji.com/manifold"> Manifold </a> ( Ubuntu 14.04 ) </li>
+      <li> <a href="http://wiki.ros.org/"> Robot Operating System </a> ( indigo ) </li>
       <li> <a href="https://github.com/dji-sdk/Onboard-SDK-ROS"> Onboard-SDK-ROS </a> </li> </ul> </td>
     <td> <a href="https://github.com/Cuijie12358"> @Cuijie12358 </a>
       <br> <a href="https://github.com/hanzheteng"> @hanzheteng </a>
@@ -30,15 +30,15 @@ Documentation maintainer: [@hanzheteng](https://github.com/hanzheteng)
       <br> <a href="https://github.com/ShoupingShan"> @ShoupingShan </a> </td>
   </tr>
   <tr>
-    <td> GroundStation
-      <br> ( <I> private </I> ) </td>
+    <td> <a href="https://github.com/CruiserProject/Cruiser-GroundStation">
+      GroundStation </a> </td>
     <td> <ul>
       <li> Object detection and classification </li>
-      <li> Anomalous behavior detection </li> </ul> </td>  
+      <li> Abnormal behavior detection </li> </ul> </td>  
     <td> <ul>
-      <li> <a href="http://www.ubuntu.com/"> Ubuntu 14.04 </a> </li>
-      <li> <a href="http://opencv.org/"> OpenCV 2.4.10 </a> </li>
-      <li> <a href="http://www.nvidia.cn/object/cudazone-cn.html"> CUDA 8.0 </a> </li>
+      <li> Ubuntu 14.04 </li>
+      <li> <a href="http://opencv.org/"> OpenCV </a> ( 2.4.10 ) </li>
+      <li> <a href="http://www.nvidia.cn/object/cudazone-cn.html"> CUDA </a> ( 8.0 ) </li>
       <li> <a href="https://pjreddie.com/darknet"> Darknet YOLO CNN </a> </li> </ul> </td>
     <td> <a href="https://github.com/finaldong"> @finaldong </a>
       <br> <a href="https://github.com/ShoupingShan"> @ShoupingShan </a> </td>
