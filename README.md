@@ -8,7 +8,7 @@ The aim of Cruiser Project is to establish **An Intelligent Aerial Security Syst
 
 This project originated as a National-level College Students' Innovative Entrepreneurial Training Plan Program, and also participated in the 15th Challenge Cup National College Students’ Extracurricular Academic Science and Technology Works Contest.
 
-Activate Error problem solving on DJI FORUM: http://forum.dev.dji.com/thread-26936-1-1.html
+Activate Error problem solving on DJI FORUM: http://forum.dev.dji.com/thread-26936-1-1.html (Please switch to Chinese forum first, or the link would lead to another wrong page.)
 
 <table>
   <tr>
