@@ -6,7 +6,7 @@ Documentation maintainer: [@hanzheteng](https://github.com/hanzheteng)
 ## 1. Introduction
 We launched a drone that would travel along a predetermined path as well as identify objects and categorize the object. Most importantly, an onboard computer was programmed to recognize the object captured by mobile app, and a separate algorithm would control the drone to pursue the object for security applications. This system can be used to reduce plenty of workloads for the police.
 
-The aim of Cruiser Project is to establish **An Intelligent Aerial Security System**. This project originated as a National-level College Students' Innovative Entrepreneurial Training Plan Program, and also participated in the 15th Challenge Cup National College Students’ Extracurricular Academic Science and Technology Works Contest, Xidian University Qualifier, Shaanxi Province Contest.
+The aim of Cruiser Project is to establish **An Intelligent Aerial Security System**. This project originated as a National-level College Students' Innovative Entrepreneurial Training Plan Program, and also participated in the 15th Challenge Cup National College Students’ Extracurricular Academic Science and Technology Works Contest.
 
 Youtube Link: https://www.youtube.com/watch?v=AcjCPLSZbis
 
