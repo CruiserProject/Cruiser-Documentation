@@ -7,13 +7,13 @@ Documentation maintainer: [@hanzheteng](https://github.com/hanzheteng)
 The aim of Cruiser Project is to establish **An Intelligent Aerial Security System**.
 
 Based on a Matrice 100 and the SDK from DJI, we developed an intelligent security guard system with utilitarian functions, including automatically flying along predetermined paths, identifying and categorizing objects, pedestrian tracking, etc.
-The onboard computer is responsible for real-time algorithms running on a robot operating system, and the ground station is mainly responsible for extra computing. The drone can be commanded by a mobile app, which is developed by our android engineers.
+The **onboard computer** is responsible for real-time algorithms running on a robot operating system, and the **ground station** is mainly responsible for extra computing. The drone can be commanded by a **mobile app**, which is developed by our android engineers.
 
 By the system we designed, the campus police could save their labor and surveil the campus in a more efficient and thorough way, providing a safer environment for students.
 
 This project originated from a National-level College Students' Innovative Entrepreneurial Training Plan Program, and then also participated in the 15th Challenge Cup National College Students’ Extracurricular Academic Science and Technology Works Contest.
 
-
+## 2. Repositories
 <table>
   <tr>
     <th> Repositories </th>
@@ -67,9 +67,9 @@ This project originated from a National-level College Students' Innovative Entre
 </table>
 
 
-## 2. CDT Protocol
+## 3. CDT Protocol
 Cruiser Data Transmission(CDT) Protocol.
-### 2.1 Protocol Introduction
+### 3.1 Protocol Introduction
 DJI Onboard SDK OPEN Protocol provide a method for communication between Mobile and Onboard device called Data Transparent Transmission.
 
 Under this mechanism, we could send message to Autopilot first and Autopilot will transfer this message to Mobile or Onboard device.
@@ -90,7 +90,7 @@ DJI Onboard SDK OPEN Protocol is only used between Onboard and Autopilot. With C
 
 So we define a new set of command and acknowledge messages within CMD VAL called Cruiser Data Transmission (CDT).
 
-### 2.2 CDT Frame
+### 3.2 CDT Frame
 <table>
   <tr>
     <th colspan=3> CDT DATA </th>
@@ -125,7 +125,7 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   </tr>
 </table>
 
-### 2.3 Function List
+### 3.3 Function List
 - Data type : unsigned char[ ]
 - M-O : from Mobile to Onboard -- CDT ID is an odd number
 - O-M : from Onboard to Mobile -- CDT ID is an even number
@@ -273,8 +273,8 @@ So we define a new set of command and acknowledge messages within CMD VAL called
 </table>
 
 
-## 3. Robot Operating System
-### 3.1 ROS Node Info
+## 4. Robot Operating System
+### 4.1 ROS Node Info
 <table>
   <tr>
     <th> Node name </th>
@@ -359,7 +359,7 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   </tr>
 </table>
 
-### 3.2 ROS Topic Format
+### 4.2 ROS Topic Format
 <table>
   <tr>
     <th> Topic name </th>
@@ -427,6 +427,6 @@ So we define a new set of command and acknowledge messages within CMD VAL called
   </tr>
 </table>
 
-## Update Log
+## 5. Update Log
 
 Activate Error problem solving on DJI FORUM: http://forum.dev.dji.com/thread-26936-1-1.html (Please switch to Chinese forum first, otherwise the link would lead to another wrong page.)
