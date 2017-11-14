@@ -4,11 +4,15 @@ Documentation for Cruiser Project.
 Documentation maintainer: [@hanzheteng](https://github.com/hanzheteng)
 
 ## 1. Introduction
-The aim of Cruiser Project is to establish **An Intelligent Aerial Security System**. We launched a drone that would travel along a predetermined path as well as identify objects and categorize the object. Most importantly, an onboard computer was programmed to recognize the object captured by mobile app, and a separate algorithm would control the drone to pursue the object for security applications. This system can be used to reduce plenty of workloads for the police.
+The aim of Cruiser Project is to establish **An Intelligent Aerial Security System**.
 
-This project originated as a National-level College Students' Innovative Entrepreneurial Training Plan Program, and also participated in the 15th Challenge Cup National College Students’ Extracurricular Academic Science and Technology Works Contest.
+Based on a Matrice 100 and the SDK from DJI, we developed an intelligent security guard system with utilitarian functions, including automatically flying along predetermined paths, identifying and categorizing objects, pedestrian tracking, etc.
+The onboard computer is responsible for real-time algorithms running on a robot operating system, and the ground station is mainly responsible for extra computing. The drone can be commanded by a mobile app, which is developed by our android engineers.
 
-Activate Error problem solving on DJI FORUM: http://forum.dev.dji.com/thread-26936-1-1.html (Please switch to Chinese forum first, or the link would lead to another wrong page.)
+By the system we designed, the campus police could save their labor and surveil the campus in a more efficient and thorough way, providing a safer environment for students.
+
+This project originated from a National-level College Students' Innovative Entrepreneurial Training Plan Program, and then also participated in the 15th Challenge Cup National College Students’ Extracurricular Academic Science and Technology Works Contest.
+
 
 <table>
   <tr>
@@ -422,3 +426,7 @@ So we define a new set of command and acknowledge messages within CMD VAL called
     <td> Two points on screen in percentage </td>
   </tr>
 </table>
+
+## Update Log
+
+Activate Error problem solving on DJI FORUM: http://forum.dev.dji.com/thread-26936-1-1.html (Please switch to Chinese forum first, otherwise the link would lead to another wrong page.)
